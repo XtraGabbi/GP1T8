@@ -1,23 +1,78 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
-    private Rigidbody rb;
-    void Start()
+    [SerializeField] private InputActionAsset actions;
+
+    [SerializeField] private GameObject lightLeft;
+    [SerializeField] private GameObject lightRight;
+    [SerializeField] private GameObject movingObject;
+    
+    private InputAction _lightRight;
+    private InputAction _lightLeft;
+    private void OnEnable()
     {
-        rb = GetComponent<Rigidbody>();
+        actions.Enable();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
+        actions.Disable();
+    }
+
+    private void Awake()
+    {
+        actions.FindAction("LightRight").performed += ctx => LightRight();
+        actions.FindAction("LightLeft").performed += ctx => LightLeft();
+    }
+
+    private void FixedUpdate()
+    {
+        if (lightRight.activeSelf && lightLeft.activeSelf)
+        {
+            Debug.Log("do nothing");
+        }
+        else if (lightRight.activeSelf)
+        {
+            movingObject.transform.position = Vector3.MoveTowards(movingObject.transform.position, lightRight.transform.position, 1f*Time.fixedDeltaTime);
+            Debug.Log("Moving Right");
+        }
+        else if (lightLeft.activeSelf)
+        {
+            movingObject.transform.position = Vector3.MoveTowards(movingObject.transform.position, lightLeft.transform.position, 1f*Time.fixedDeltaTime);
+            Debug.Log("Moving Left");
+        }   
+    }
+
+    private void LightRight()
+    {
+        Debug.Log("Light Right");
+        if (lightRight.activeSelf)
+        {
+            lightRight.SetActive(false);
+        }
+        else
+        {
+            lightRight.SetActive(true);
+        }
         
     }
-
-    void OnPlayerMove(InputActions.PlayerActions context)
+    
+    private void LightLeft()
     {
-        rb.AddForce(rb.velocity);
+        Debug.Log("Light Left");
+        if (lightLeft.activeSelf)
+        {
+            lightLeft.SetActive(false);
+        }
+        else
+        {
+            lightLeft.SetActive(true);
+        }
     }
+
 }
