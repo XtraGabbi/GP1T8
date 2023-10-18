@@ -4,20 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
+using UnityEngine.Serialization;
 
 public class LightManager : MonoBehaviour
 {
     public static LightManager instance;
 
-    public LightSource LightSource1;
-    public LightSource LightSource2;
+    public LightSource LightSourceLeft;
+    public LightSource LightSourceRight;
 
     public LightSource ShiningLight;
 
-    public InputAction switchLightAction;
+    public InputAction toggleLeftLightAction;
 
+    public InputAction toggleRightLightAction;
 
-    private GameObject Algea;
+    private Volvox _volvox;
 
     private void Awake()
     {
@@ -30,41 +32,46 @@ public class LightManager : MonoBehaviour
             Destroy(this);
         }
 
-        switchLightAction.started += ctx =>
+        toggleLeftLightAction.started += ctx =>
         {
-            print("SwitchLight!");
-            SwitchLight();
+            LightSourceLeft.Toggle();
+        };
+        
+        toggleRightLightAction.started += ctx =>
+        {
+            LightSourceRight.Toggle();
         };
     }
 
     private void OnEnable()
     {
-        switchLightAction.Enable();
+        toggleLeftLightAction.Enable();
+        toggleRightLightAction.Enable();
     }
     private void OnDisable()
     {
-        switchLightAction.Disable();
+        toggleLeftLightAction.Disable();
+        toggleRightLightAction.Disable();
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        Algea = GameObject.FindWithTag("Algae");
-        LightSource1.turnOnTheLight();
-        LightSource2.turnOffTheLight();
+        _volvox = Volvox.instance;
+        LightSourceLeft.turnOnTheLight();
+        LightSourceRight.turnOffTheLight();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        ShiningLight.shootLightTowardsTargetPosition(Algea.transform.position);
+        ShiningLight.shootLightTowardsTargetPosition(_volvox.transform.position);
     }
 
     public void SwitchLight()
     {
-        LightSource1.Toggle();
-        LightSource2.Toggle();
+        LightSourceLeft.Toggle();
+        LightSourceRight.Toggle();
     }
 }
