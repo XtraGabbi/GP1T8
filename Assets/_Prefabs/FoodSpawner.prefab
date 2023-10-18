@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 6396211128531219910, guid: 96443fcde11032d4f80d8cab4e44a1cb, type: 3}
   spawningRange: {x: 5, y: 5}
+  spawnRateSeconds: 3
