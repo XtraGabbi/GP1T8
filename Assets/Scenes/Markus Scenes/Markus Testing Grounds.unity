@@ -332,6 +332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1029738807}
+  - component: {fileID: 1029738808}
   m_Layer: 0
   m_Name: LightLeft
   m_TagString: Untagged
@@ -355,6 +356,24 @@ Transform:
   - {fileID: 801039631}
   m_Father: {fileID: 1611658100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1029738808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029738806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e5f6d731b18e46baf62071135f600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHight: 0
+  maxWidth: 0
+  placementRange: 9
+  mainCamera: {fileID: 0}
+  placeItLeft: 1
+  placeItRight: 0
 --- !u!1 &1179085663
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +405,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1614270963}
   m_Father: {fileID: 1611658100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1179085665
@@ -493,6 +513,7 @@ MonoBehaviour:
   lightLeft: {fileID: 1029738806}
   lightRight: {fileID: 2134653191}
   movingObject: {fileID: 1179085663}
+  speed: 2
 --- !u!4 &1611658100
 Transform:
   m_ObjectHideFlags: 0
@@ -598,12 +619,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614270961}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 8, z: 0}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1179085664}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1973120288
 GameObject:
@@ -800,6 +821,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2134653192}
+  - component: {fileID: 2134653193}
   m_Layer: 0
   m_Name: LightRight
   m_TagString: Untagged
@@ -823,11 +845,28 @@ Transform:
   - {fileID: 1973120289}
   m_Father: {fileID: 1611658100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2134653193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134653191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e5f6d731b18e46baf62071135f600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHight: 0
+  maxWidth: 0
+  placementRange: 9
+  mainCamera: {fileID: 0}
+  placeItLeft: 0
+  placeItRight: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 2001274997}
   - {fileID: 500650815}
-  - {fileID: 1614270963}
   - {fileID: 1611658100}

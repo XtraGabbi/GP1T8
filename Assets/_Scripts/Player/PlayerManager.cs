@@ -12,6 +12,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private GameObject lightRight;
     [SerializeField] private GameObject movingObject;
     
+    [Header("Player Settings")]
+    [SerializeField] private float speed;
+    
     private InputAction _lightRight;
     private InputAction _lightLeft;
     private void OnEnable()
@@ -38,12 +41,12 @@ public class PlayerManager : MonoBehaviour
         }
         else if (lightRight.activeSelf)
         {
-            movingObject.transform.position = Vector3.MoveTowards(movingObject.transform.position, lightRight.transform.position, 1f*Time.fixedDeltaTime);
+            movingObject.transform.position = Vector3.MoveTowards(movingObject.transform.position, lightRight.transform.position, speed*Time.fixedDeltaTime);
             Debug.Log("Moving Right");
         }
         else if (lightLeft.activeSelf)
         {
-            movingObject.transform.position = Vector3.MoveTowards(movingObject.transform.position, lightLeft.transform.position, 1f*Time.fixedDeltaTime);
+            movingObject.transform.position = Vector3.MoveTowards(movingObject.transform.position, lightLeft.transform.position, speed*Time.fixedDeltaTime);
             Debug.Log("Moving Left");
         }   
     }
