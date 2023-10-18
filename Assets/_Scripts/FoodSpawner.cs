@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FoodSpawner : MonoBehaviour
@@ -14,7 +13,7 @@ public class FoodSpawner : MonoBehaviour
         StartCoroutine(StartFoodSpawning());
     }
 
-
+    // Start food spawning
     public IEnumerator StartFoodSpawning()
     {
         while (true)
@@ -23,6 +22,7 @@ public class FoodSpawner : MonoBehaviour
             yield return new WaitForSeconds(spawnRateSeconds);
         }
     }
+    // Stop food spawning
     public void StopFoodSpawning()
     {
         StopCoroutine(StartFoodSpawning());        
