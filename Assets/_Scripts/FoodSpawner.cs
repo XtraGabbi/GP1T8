@@ -6,6 +6,7 @@ public class FoodSpawner : MonoBehaviour
     [SerializeField] Transform foodPrefab;
     [SerializeField] Vector2 spawningRange;
     public float spawnRateSeconds;
+    public int spawnLimit; // TODO: make this work
 
     // Start is called before the first frame update
     void Start()
