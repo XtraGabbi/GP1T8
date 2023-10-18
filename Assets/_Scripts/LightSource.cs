@@ -36,7 +36,6 @@ public class LightSource : MonoBehaviour
 
         isOn = true;
         lightBeam.SetActive(true);
-        LightManager.instance.ShiningLight = this;
     }
 
     public void turnOffTheLight()

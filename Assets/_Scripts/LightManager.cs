@@ -8,12 +8,10 @@ using UnityEngine.Serialization;
 
 public class LightManager : MonoBehaviour
 {
-    public static LightManager instance;
+    public static LightManager Instance;
 
     public LightSource LightSourceLeft;
     public LightSource LightSourceRight;
-
-    public LightSource ShiningLight;
 
     public InputAction toggleLeftLightAction;
 
@@ -23,24 +21,18 @@ public class LightManager : MonoBehaviour
 
     private void Awake()
     {
-        if (!instance)
+        if (!Instance)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
             Destroy(this);
         }
 
-        toggleLeftLightAction.started += ctx =>
-        {
-            LightSourceLeft.Toggle();
-        };
-        
-        toggleRightLightAction.started += ctx =>
-        {
-            LightSourceRight.Toggle();
-        };
+        toggleLeftLightAction.started += ctx => { LightSourceLeft.Toggle(); };
+
+        toggleRightLightAction.started += ctx => { LightSourceRight.Toggle(); };
     }
 
     private void OnEnable()
@@ -48,6 +40,7 @@ public class LightManager : MonoBehaviour
         toggleLeftLightAction.Enable();
         toggleRightLightAction.Enable();
     }
+
     private void OnDisable()
     {
         toggleLeftLightAction.Disable();
@@ -58,7 +51,7 @@ public class LightManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _volvox = Volvox.instance;
+        _volvox = Volvox.Instance;
         LightSourceLeft.turnOnTheLight();
         LightSourceRight.turnOffTheLight();
     }
@@ -66,7 +59,15 @@ public class LightManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ShiningLight.shootLightTowardsTargetPosition(_volvox.transform.position);
+        if (LightSourceLeft.isOn)
+        {
+            LightSourceLeft.shootLightTowardsTargetPosition(_volvox.transform.position);
+        }
+
+        if (LightSourceRight.isOn)
+        {
+            LightSourceRight.shootLightTowardsTargetPosition(_volvox.transform.position);
+        }
     }
 
     public void SwitchLight()
