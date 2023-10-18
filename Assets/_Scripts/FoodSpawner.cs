@@ -5,32 +5,30 @@ using UnityEngine;
 public class FoodSpawner : MonoBehaviour
 {
     [SerializeField] Transform foodPrefab;
-
     [SerializeField] Vector2 spawningRange;
-
     public float spawnRateSeconds;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartFoodSpawning();
+        StartCoroutine(StartFoodSpawning());
     }
 
-    // Update is called once per frame
-    void Update()
-    {       
-        
 
-    }
-
-    public void StartFoodSpawning()
+    public IEnumerator StartFoodSpawning()
     {
-        InvokeRepeating("SpawnFood", 0, spawnRateSeconds);
+        while (true)
+        {
+            SpawnFood();
+            yield return new WaitForSeconds(spawnRateSeconds);
+        }
     }
     public void StopFoodSpawning()
     {
-        CancelInvoke("SpawnFood");
+        StopCoroutine(StartFoodSpawning());        
     }
+
+
 
     // The spawning is reletive to the center of the GameObject's position
     private void SpawnFood()
