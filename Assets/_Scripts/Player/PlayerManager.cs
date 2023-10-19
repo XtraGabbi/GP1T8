@@ -1,13 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerManager : MonoBehaviour
 {
+    #region Config
+    [Header("Input Actions")]
     [SerializeField] private InputActionAsset actions;
-
+    [Space(20)]
     [SerializeField] private GameObject lightLeft;
     [SerializeField] private GameObject lightRight;
     [SerializeField] private GameObject movingObject;
@@ -17,6 +16,7 @@ public class PlayerManager : MonoBehaviour
     
     private InputAction _lightRight;
     private InputAction _lightLeft;
+    #endregion
     private void OnEnable()
     {
         actions.Enable();
@@ -37,23 +37,20 @@ public class PlayerManager : MonoBehaviour
     {
         if (lightRight.activeSelf && lightLeft.activeSelf)
         {
-            Debug.Log("do nothing");
+            
         }
         else if (lightRight.activeSelf)
         {
             movingObject.transform.position = Vector3.MoveTowards(movingObject.transform.position, lightRight.transform.position, speed*Time.fixedDeltaTime);
-            Debug.Log("Moving Right");
         }
         else if (lightLeft.activeSelf)
         {
             movingObject.transform.position = Vector3.MoveTowards(movingObject.transform.position, lightLeft.transform.position, speed*Time.fixedDeltaTime);
-            Debug.Log("Moving Left");
-        }   
+        }
     }
 
     private void LightRight()
     {
-        Debug.Log("Light Right");
         if (lightRight.activeSelf)
         {
             lightRight.SetActive(false);
@@ -63,11 +60,10 @@ public class PlayerManager : MonoBehaviour
             lightRight.SetActive(true);
         }
         
-    }
+    } // Checks if the object is active or not, and then sets it to the opposite.
     
     private void LightLeft()
     {
-        Debug.Log("Light Left");
         if (lightLeft.activeSelf)
         {
             lightLeft.SetActive(false);
@@ -76,6 +72,5 @@ public class PlayerManager : MonoBehaviour
         {
             lightLeft.SetActive(true);
         }
-    }
-
+    } // Checks if the object is active or not, and then sets it to the opposite.
 }
