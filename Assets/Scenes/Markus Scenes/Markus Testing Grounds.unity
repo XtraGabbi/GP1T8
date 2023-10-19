@@ -368,12 +368,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465e5f6d731b18e46baf62071135f600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHight: 0
-  maxWidth: 0
-  placementRange: 9
-  mainCamera: {fileID: 0}
   placeItLeft: 1
   placeItRight: 0
+  placementRangeFromCamera: 9
+  actions: {fileID: -944628639613478452, guid: 49ddea46669fbd144a02d9ee1607a5ed, type: 3}
 --- !u!1 &1179085663
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,12 +855,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465e5f6d731b18e46baf62071135f600, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHight: 0
-  maxWidth: 0
-  placementRange: 9
-  mainCamera: {fileID: 0}
   placeItLeft: 0
   placeItRight: 1
+  placementRangeFromCamera: 9
+  actions: {fileID: -944628639613478452, guid: 49ddea46669fbd144a02d9ee1607a5ed, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
