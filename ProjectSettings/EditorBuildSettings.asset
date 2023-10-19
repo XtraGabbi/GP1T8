@@ -4,6 +4,9 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Zongying Scenes/MovingTowardsLight.unity
+    guid: ab6fe53a5a1c34e4cab853b01a793d82
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d495af1f17336c94887a0e9068703e70, type: 2}
