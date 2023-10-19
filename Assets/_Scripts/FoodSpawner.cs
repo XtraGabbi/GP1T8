@@ -12,7 +12,7 @@ public class FoodSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MakeFoodParent();
+        CreateFoodParent();
         StartCoroutine(StartFoodSpawning());
     }
 
@@ -47,8 +47,8 @@ public class FoodSpawner : MonoBehaviour
     }
 
 
-    // Makes the object that will parent all the food prefab objects
-    private void MakeFoodParent()
+    // Creates the object that will parent all the food prefab objects
+    private void CreateFoodParent()
     {
         foodParent = new GameObject();
         foodParent.name = "Foods";
