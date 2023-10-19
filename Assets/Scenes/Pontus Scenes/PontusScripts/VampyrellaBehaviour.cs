@@ -36,12 +36,13 @@ public class VampyrellaBehaviour : MonoBehaviour
         //Attatch to volvox if close enough. --> detection, raycast?
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Volvox") 
+        if (collision.GetComponent<VolvoxHealth>()) 
         {
             //Add some additional force towards volvox transform
             //then add force and disappearing movementspeed in the other direction, or just destroy?
+            Debug.Log("meet enemy!");
         }
     }
 
