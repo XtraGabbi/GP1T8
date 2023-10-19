@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class Volvox : MonoBehaviour
 {
     public static Volvox Instance;
+
+    public GameObject colonyPrefab;
+    public Transform colonyCenter;
 
     [Header("Lerp with self position")] public float lerpSpeed = 0.1f;
 
@@ -40,14 +44,15 @@ public class Volvox : MonoBehaviour
     {
         _lightManager = LightManager.Instance;
         _followTarget = FollowTarget.Instance;
+        
     }
 
     // Update is called once per frame
-    // void Update()
-    // {
-    //     transform.position = Vector3.Lerp(transform.position,
-    //         _followTarget.transform.position, lerpSpeed * Time.deltaTime);
-    // }
+    void Update()
+    {
+        Vector3 rotation = new Vector3(10, 10, 10) * Time.deltaTime;
+        colonyCenter.transform.rotation *= Quaternion.Euler(rotation);
+    }
 
     private void FixedUpdate()
     {
@@ -75,5 +80,19 @@ public class Volvox : MonoBehaviour
     
         transform.position = Vector3.Lerp(transform.position,
             _followTarget.transform.position, lerpSpeed * Time.deltaTime);
+    }
+
+    public void AddColony()
+    {
+        float randomDist = Random.Range(0f, 0.9f);
+        float randomX = Random.Range(0f, 360f);
+        float randomY = Random.Range(0f, 360f);
+        float randomZ = Random.Range(0f, 360f);
+
+        Vector3 randomPos = Quaternion.Euler(randomX, randomY, randomZ) * Vector3.forward * randomDist;
+        
+        GameObject newColony = Instantiate(colonyPrefab);
+        newColony.transform.SetParent(colonyCenter);
+        newColony.transform.position += colonyCenter.position + randomPos;
     }
 }
