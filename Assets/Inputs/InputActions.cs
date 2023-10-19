@@ -37,12 +37,39 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""BigButton"",
+                    ""name"": ""LightLeft"",
                     ""type"": ""Button"",
                     ""id"": ""1d8a4b54-20e6-487c-9c8d-75e129a47ab6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press"",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""LightRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""695523ea-eef8-4053-9911-fdde4d4bb6fe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SliderLeft"",
+                    ""type"": ""Value"",
+                    ""id"": ""9a7d9394-56e6-4645-8929-c92e5b1bddce"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""SliderRight"",
+                    ""type"": ""Value"",
+                    ""id"": ""6bc3a032-25e0-401b-9c46-b2c014957d90"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
                     ""initialStateCheck"": true
                 }
             ],
@@ -105,11 +132,44 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8c64a922-a500-416b-b2cb-b823f527f91e"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""BigButton"",
+                    ""action"": ""LightLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6bba1a5e-37ac-4e73-90c8-11fb33ae5816"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LightRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d67e7a0-4e69-477e-8ca2-d6ac0d76ac7b"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SliderLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""211d59fa-1772-4eff-9fc6-24de7aac886f"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SliderRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -121,7 +181,10 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_PlayerAction = m_Player.FindAction("PlayerAction", throwIfNotFound: true);
-        m_Player_BigButton = m_Player.FindAction("BigButton", throwIfNotFound: true);
+        m_Player_LightLeft = m_Player.FindAction("LightLeft", throwIfNotFound: true);
+        m_Player_LightRight = m_Player.FindAction("LightRight", throwIfNotFound: true);
+        m_Player_SliderLeft = m_Player.FindAction("SliderLeft", throwIfNotFound: true);
+        m_Player_SliderRight = m_Player.FindAction("SliderRight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -184,13 +247,19 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_PlayerAction;
-    private readonly InputAction m_Player_BigButton;
+    private readonly InputAction m_Player_LightLeft;
+    private readonly InputAction m_Player_LightRight;
+    private readonly InputAction m_Player_SliderLeft;
+    private readonly InputAction m_Player_SliderRight;
     public struct PlayerActions
     {
         private @InputActions m_Wrapper;
         public PlayerActions(@InputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @PlayerAction => m_Wrapper.m_Player_PlayerAction;
-        public InputAction @BigButton => m_Wrapper.m_Player_BigButton;
+        public InputAction @LightLeft => m_Wrapper.m_Player_LightLeft;
+        public InputAction @LightRight => m_Wrapper.m_Player_LightRight;
+        public InputAction @SliderLeft => m_Wrapper.m_Player_SliderLeft;
+        public InputAction @SliderRight => m_Wrapper.m_Player_SliderRight;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -203,9 +272,18 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @PlayerAction.started += instance.OnPlayerAction;
             @PlayerAction.performed += instance.OnPlayerAction;
             @PlayerAction.canceled += instance.OnPlayerAction;
-            @BigButton.started += instance.OnBigButton;
-            @BigButton.performed += instance.OnBigButton;
-            @BigButton.canceled += instance.OnBigButton;
+            @LightLeft.started += instance.OnLightLeft;
+            @LightLeft.performed += instance.OnLightLeft;
+            @LightLeft.canceled += instance.OnLightLeft;
+            @LightRight.started += instance.OnLightRight;
+            @LightRight.performed += instance.OnLightRight;
+            @LightRight.canceled += instance.OnLightRight;
+            @SliderLeft.started += instance.OnSliderLeft;
+            @SliderLeft.performed += instance.OnSliderLeft;
+            @SliderLeft.canceled += instance.OnSliderLeft;
+            @SliderRight.started += instance.OnSliderRight;
+            @SliderRight.performed += instance.OnSliderRight;
+            @SliderRight.canceled += instance.OnSliderRight;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -213,9 +291,18 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @PlayerAction.started -= instance.OnPlayerAction;
             @PlayerAction.performed -= instance.OnPlayerAction;
             @PlayerAction.canceled -= instance.OnPlayerAction;
-            @BigButton.started -= instance.OnBigButton;
-            @BigButton.performed -= instance.OnBigButton;
-            @BigButton.canceled -= instance.OnBigButton;
+            @LightLeft.started -= instance.OnLightLeft;
+            @LightLeft.performed -= instance.OnLightLeft;
+            @LightLeft.canceled -= instance.OnLightLeft;
+            @LightRight.started -= instance.OnLightRight;
+            @LightRight.performed -= instance.OnLightRight;
+            @LightRight.canceled -= instance.OnLightRight;
+            @SliderLeft.started -= instance.OnSliderLeft;
+            @SliderLeft.performed -= instance.OnSliderLeft;
+            @SliderLeft.canceled -= instance.OnSliderLeft;
+            @SliderRight.started -= instance.OnSliderRight;
+            @SliderRight.performed -= instance.OnSliderRight;
+            @SliderRight.canceled -= instance.OnSliderRight;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -236,6 +323,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     public interface IPlayerActions
     {
         void OnPlayerAction(InputAction.CallbackContext context);
-        void OnBigButton(InputAction.CallbackContext context);
+        void OnLightLeft(InputAction.CallbackContext context);
+        void OnLightRight(InputAction.CallbackContext context);
+        void OnSliderLeft(InputAction.CallbackContext context);
+        void OnSliderRight(InputAction.CallbackContext context);
     }
 }
