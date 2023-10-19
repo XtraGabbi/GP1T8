@@ -4,8 +4,8 @@ using UnityEngine;
 public class FoodSpawner : MonoBehaviour
 {
     [SerializeField] Transform foodPrefab;
-    private GameObject foodParent;
-    [SerializeField] Vector2 spawningRange;
+    private GameObject foodsParent;
+    public Vector2 spawningRange;
     public float spawnRateSeconds;
     public int spawnLimit;
 
@@ -38,11 +38,11 @@ public class FoodSpawner : MonoBehaviour
     // The spawning is reletive to the center of the GameObject's position
     private void SpawnFood()
     {
-        if(foodParent.transform.childCount < spawnLimit)
+        if(foodsParent.transform.childCount < spawnLimit)
         {
             Transform food = Instantiate(foodPrefab);
             food.transform.position += new Vector3(Random.Range(-spawningRange.x, spawningRange.x), 0, Random.Range(-spawningRange.y, spawningRange.y));
-            food.transform.SetParent(foodParent.transform, true);
+            food.transform.SetParent(foodsParent.transform, true);
         }
     }
 
@@ -50,7 +50,7 @@ public class FoodSpawner : MonoBehaviour
     // Creates the object that will parent all the food prefab objects
     private void CreateFoodParent()
     {
-        foodParent = new GameObject();
-        foodParent.name = "Foods";
+        foodsParent = new GameObject();
+        foodsParent.name = "Foods";
     }
 }
