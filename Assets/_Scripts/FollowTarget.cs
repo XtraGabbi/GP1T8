@@ -9,7 +9,7 @@ public class FollowTarget : MonoBehaviour
     // Start is called before the first frame update
 
     public float targetlerpSpeed = 0.1f;
-    private LightManager _lightManager;
+    private PlayerManager _playerManager;
 
     private void Awake()
     {
@@ -25,30 +25,33 @@ public class FollowTarget : MonoBehaviour
 
     void Start()
     {
-        _lightManager = LightManager.Instance;
+        _playerManager = PlayerManager.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (_lightManager.LightSourceLeft.isOn && _lightManager.LightSourceRight.isOn)
+        if (_playerManager.lightSourceLeft.isOn && _playerManager.lightSourceRight.isOn)
         {
-            Vector3 leftLightPos = _lightManager.LightSourceLeft.transform.position;
-            Vector3 rightLightPos = _lightManager.LightSourceRight.transform.position;
+            Vector3 leftLightPos = _playerManager.lightSourceLeft.transform.position;
+            leftLightPos.y = 0;
+            Vector3 rightLightPos = _playerManager.lightSourceRight.transform.position;
+            rightLightPos.y = 0;
             Vector3 dirBetweenLight = (rightLightPos - leftLightPos).normalized;
             Vector3 nearestPoint = Vector3.Dot(transform.position - leftLightPos, dirBetweenLight) * dirBetweenLight +
                                    leftLightPos;
             
             transform.position = Vector3.Lerp(transform.position,nearestPoint, targetlerpSpeed * Time.deltaTime);
         }
-        else if (_lightManager.LightSourceLeft.isOn || _lightManager.LightSourceRight.isOn)
+        else if (_playerManager.lightSourceLeft.isOn || _playerManager.lightSourceRight.isOn)
         {
-            LightSource light = _lightManager.LightSourceLeft.isOn
-                ? _lightManager.LightSourceLeft
-                : _lightManager.LightSourceRight;
-            
+            LightSource light = _playerManager.lightSourceLeft.isOn
+                ? _playerManager.lightSourceLeft
+                : _playerManager.lightSourceRight;
+            Vector3 lightSorcePos = light.transform.position;
+            lightSorcePos.y = 0;
             transform.position = Vector3.Lerp(transform.position,
-                light.transform.position, targetlerpSpeed * Time.deltaTime);
+                lightSorcePos, targetlerpSpeed * Time.deltaTime);
         }
         else
         {
