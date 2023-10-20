@@ -12,7 +12,6 @@ public class Volvox : MonoBehaviour
 
     public GameObject colonyPrefab;
     public Transform colonyCenter;
-    public int colonyCount;
 
     [Header("Lerp with self position")] public float lerpSpeed = 0.1f;
 
