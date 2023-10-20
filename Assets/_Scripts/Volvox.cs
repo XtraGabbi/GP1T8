@@ -94,7 +94,5 @@ public class Volvox : MonoBehaviour
         GameObject newColony = Instantiate(colonyPrefab);
         newColony.transform.SetParent(colonyCenter);
         newColony.transform.position += colonyCenter.position + randomPos;
-
-        colonyCount++; //added this to keep track of the count of the colony - Elliott
     }
 }
