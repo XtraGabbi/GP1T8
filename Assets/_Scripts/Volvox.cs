@@ -12,6 +12,7 @@ public class Volvox : MonoBehaviour
 
     public GameObject colonyPrefab;
     public Transform colonyCenter;
+    public int colonyCount;
 
     [Header("Lerp with self position")] public float lerpSpeed = 0.1f;
 
@@ -94,5 +95,7 @@ public class Volvox : MonoBehaviour
         GameObject newColony = Instantiate(colonyPrefab);
         newColony.transform.SetParent(colonyCenter);
         newColony.transform.position += colonyCenter.position + randomPos;
+
+        colonyCount++; //added this to keep track of the count of the colony - Elliott
     }
 }
