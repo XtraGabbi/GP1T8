@@ -240,6 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf30fe750f5520468dcd0d7129b9193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colonyPrefab: {fileID: 0}
+  colonyCenter: {fileID: 0}
   lerpSpeed: 0.1
   rb: {fileID: 4252927731994855788}
   controlParam_Proportion: 0.01

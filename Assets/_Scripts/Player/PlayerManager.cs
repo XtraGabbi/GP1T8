@@ -9,10 +9,10 @@ public class PlayerManager : MonoBehaviour
     [Header("Input Actions")]
     [SerializeField] private InputActionAsset actions;
     [Space(20)]
-    [SerializeField] private GameObject lightLeft;
-    [SerializeField] private GameObject lightRight;
-    [SerializeField] private GameObject movingObject;
-    [SerializeField] private Volvox _volvox;
+    // [SerializeField] private GameObject lightLeft;
+    // [SerializeField] private GameObject lightRight;
+    // [SerializeField] private GameObject movingObject;
+    // [SerializeField] private Volvox _volvox;
     
     [Header("Player Settings")]
     [SerializeField] public LightSource lightSourceLeft;
