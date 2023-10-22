@@ -12,6 +12,7 @@ public class Volvox : MonoBehaviour
 
     public GameObject colonyPrefab;
     public Transform colonyCenter;
+    public float maxSpeed = 25f;
 
     [Header("Lerp with self position")] public float lerpSpeed = 0.1f;
 
@@ -44,7 +45,8 @@ public class Volvox : MonoBehaviour
     {
         _lightManager = LightManager.Instance;
         _followTarget = FollowTarget.Instance;
-        
+        rb.maxLinearVelocity = maxSpeed;
+
     }
 
     // Update is called once per frame
