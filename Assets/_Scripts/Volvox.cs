@@ -12,13 +12,14 @@ public class Volvox : MonoBehaviour
 
     public GameObject colonyPrefab;
     public Transform colonyCenter;
+    public float maxSpeed = 25f;
 
-    [Header("Lerp with self position")] public float lerpSpeed = 0.1f;
+    // [Header("Lerp with self position")] public float lerpSpeed = 0.1f;
 
-    [Header("For PID")] public Rigidbody rb;
+    [Header("For Movement Control")] public Rigidbody rb;
 
-    public float controlParam_Proportion = 0.01f;
-    public float controlParam_Differentiation = 0.42f;
+    [FormerlySerializedAs("controlParam_Proportion")] public float speedFactor = 0.01f;
+    [FormerlySerializedAs("controlParam_Differentiation")] public float preventOvershootingFactor = 0.42f;
 
     private Vector3 error = Vector3.zero;
     private Vector3 errorLastTime = Vector3.zero;
@@ -44,7 +45,8 @@ public class Volvox : MonoBehaviour
     {
         _lightManager = LightManager.Instance;
         _followTarget = FollowTarget.Instance;
-        
+        rb.maxLinearVelocity = maxSpeed;
+
     }
 
     // Update is called once per frame
@@ -60,27 +62,27 @@ public class Volvox : MonoBehaviour
     }
 
 
-    void movingTowardsLight()
-    {
-        LerpPosition();
-    }
+    // void movingTowardsLight()
+    // {
+    //     LerpPosition();
+    // }
 
     void PIDControl(Transform current, Transform target)
     {
         error = _followTarget.transform.position - transform.position;
-        Vector3 force = controlParam_Proportion * error +
-                        controlParam_Differentiation * (error - errorLastTime) / Time.fixedDeltaTime;
+        Vector3 force = speedFactor * error +
+                        preventOvershootingFactor * (error - errorLastTime) / Time.fixedDeltaTime;
         rb.AddForce(force);
     
         errorLastTime = error;
     }
     
-    void LerpPosition()
-    {
-    
-        transform.position = Vector3.Lerp(transform.position,
-            _followTarget.transform.position, lerpSpeed * Time.deltaTime);
-    }
+    // void LerpPosition()
+    // {
+    //
+    //     transform.position = Vector3.Lerp(transform.position,
+    //         _followTarget.transform.position, lerpSpeed * Time.deltaTime);
+    // }
 
     public void AddColony()
     {
@@ -94,5 +96,15 @@ public class Volvox : MonoBehaviour
         GameObject newColony = Instantiate(colonyPrefab);
         newColony.transform.SetParent(colonyCenter);
         newColony.transform.position += colonyCenter.position + randomPos;
+    }
+
+    public void RemoveColony()
+    {
+        if (colonyCenter.childCount > 0)
+        {
+            GameObject colony = colonyCenter.GetChild(colonyCenter.childCount - 1).gameObject;
+            Destroy(colony);
+            print("colony sucked!");
+        }
     }
 }

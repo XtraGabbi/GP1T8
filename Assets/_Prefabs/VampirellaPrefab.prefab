@@ -46,9 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c73f2408628b94b8d5b14fc4002abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vampyrella: {fileID: 0}
-  rb: {fileID: 0}
+  movementSpeed: 2
+  giveUpChaseTimer: 3
+  attachedToPlayerTimer: 5
+  attachDistance: 0.81
+  damage: 1
   player: {fileID: 0}
+  volvoxHealth: {fileID: 0}
 --- !u!135 &8172960182730104626
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -64,11 +68,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 4.3
+  m_Radius: 12
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &325708034972895418
 PrefabInstance:
