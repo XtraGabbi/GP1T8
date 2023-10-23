@@ -5,15 +5,13 @@ using UnityEngine;
 
 public class Food : MonoBehaviour
 {
-    [SerializeField] float healthIncrease;
-
     // Get eaten by volvox when volvox is in trigger
     private void OnTriggerEnter(Collider collition)
     {
-        if (collition.GetComponent<VolvoxHealth>())
+        if (collition.GetComponent<VolvoxColonyCount>())
         {
-            VolvoxHealth volvoxHealth = collition.GetComponent<VolvoxHealth>();
-            volvoxHealth.health += healthIncrease;
+            VolvoxColonyCount volvoxColonyCount = collition.GetComponent<VolvoxColonyCount>();
+            volvoxColonyCount.colonyCount++;
 
             Volvox.Instance.AddColony();
 
