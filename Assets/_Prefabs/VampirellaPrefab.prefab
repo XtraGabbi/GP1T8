@@ -49,10 +49,9 @@ MonoBehaviour:
   movementSpeed: 2
   giveUpChaseTimer: 3
   attachedToPlayerTimer: 5
-  attachDistance: 0.81
-  damage: 1
+  attachDistance: 1
   player: {fileID: 0}
-  volvoxHealth: {fileID: 0}
+  volvoxScript: {fileID: 0}
 --- !u!135 &8172960182730104626
 SphereCollider:
   m_ObjectHideFlags: 0
