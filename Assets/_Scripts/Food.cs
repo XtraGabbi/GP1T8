@@ -8,11 +8,8 @@ public class Food : MonoBehaviour
     // Get eaten by volvox when volvox is in trigger
     private void OnTriggerEnter(Collider collition)
     {
-        if (collition.GetComponent<VolvoxColonyCount>())
+        if (collition.GetComponent<Volvox>())
         {
-            VolvoxColonyCount volvoxColonyCount = collition.GetComponent<VolvoxColonyCount>();
-            volvoxColonyCount.colonyCount++;
-
             Volvox.Instance.AddColony();
 
             Debug.Log("Add colony");

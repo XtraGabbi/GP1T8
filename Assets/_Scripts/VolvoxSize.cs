@@ -7,18 +7,8 @@ public class VolvoxSize : MonoBehaviour
     [SerializeField] float baseSize;
     [SerializeField] float sizeIncreesedBy;
 
-    [SerializeField] int sizeUpAmount;
+    [SerializeField] int sizeUpRequirement;
     [SerializeField] int sizeLevel;
-
-    [SerializeField] int addedFoodTEMP; // to be removed later
-
-    private VolvoxColonyCount colonyCount;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        colonyCount = GetComponent<VolvoxColonyCount>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -26,7 +16,7 @@ public class VolvoxSize : MonoBehaviour
         UpdateSize();
     }
 
-    // Updates all size 
+    // Updates volvox size & sizeLevel
     private void UpdateSize()
     {
         UpdateSizeLevel();
@@ -41,6 +31,6 @@ public class VolvoxSize : MonoBehaviour
 
     private void UpdateSizeLevel()
     {
-        sizeLevel = Mathf.FloorToInt((float)colonyCount.colonyCount / sizeUpAmount);
+        sizeLevel = Mathf.FloorToInt((float)Volvox.Instance.colonyCenter.childCount / sizeUpRequirement);
     }
 }
