@@ -26,11 +26,21 @@ public class VolvoxSize : MonoBehaviour
         UpdateSize();
     }
 
+    // Updates all size 
     private void UpdateSize()
     {
-        sizeLevel = Mathf.FloorToInt((float)colonyCount.colonyCount / sizeUpAmount);
+        UpdateSizeLevel();
+        UpdateVolvoxSize();
+    }
 
+    private void UpdateVolvoxSize()
+    {
         float setSize = (sizeLevel * sizeIncreesedBy) + baseSize;
         transform.localScale = new Vector3(setSize, setSize, setSize);
+    }
+
+    private void UpdateSizeLevel()
+    {
+        sizeLevel = Mathf.FloorToInt((float)colonyCount.colonyCount / sizeUpAmount);
     }
 }
