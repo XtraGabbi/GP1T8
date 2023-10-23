@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class VolvoxColonyCount : MonoBehaviour
 {
-    public float colonyCount;
+    public int colonyCount;
 }

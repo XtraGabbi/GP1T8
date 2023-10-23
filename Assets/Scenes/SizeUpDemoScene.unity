@@ -1411,9 +1411,6 @@ PrefabInstance:
       addedObject: {fileID: 1315053473}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21a2b12376c386448a059fc564b478db, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1315053477}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21a2b12376c386448a059fc564b478db, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1315053476}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21a2b12376c386448a059fc564b478db, type: 3}
       insertIndex: -1
@@ -1424,6 +1421,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21a2b12376c386448a059fc564b478db, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1315053478}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21a2b12376c386448a059fc564b478db, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1315053479}
   m_SourcePrefab: {fileID: 100100000, guid: 21a2b12376c386448a059fc564b478db, type: 3}
 --- !u!1 &1243863293
 GameObject:
@@ -1553,19 +1553,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1315053477
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315053471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ec4e3e9e96f2354faedad73a6c1c669, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
 --- !u!114 &1315053478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,6 +1570,19 @@ MonoBehaviour:
   sizeUpAmount: 6
   sizeLevel: 0
   addedFoodTEMP: 0
+--- !u!114 &1315053479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315053471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9b463d4ede876f45a578f9f0387113e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colonyCount: 0
 --- !u!1 &1322426966
 GameObject:
   m_ObjectHideFlags: 0

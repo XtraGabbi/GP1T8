@@ -12,10 +12,12 @@ public class VolvoxSize : MonoBehaviour
 
     [SerializeField] int addedFoodTEMP; // to be removed later
 
+    private VolvoxColonyCount colonyCount;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        colonyCount = GetComponent<VolvoxColonyCount>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class VolvoxSize : MonoBehaviour
 
     private void UpdateSize()
     {
-        sizeLevel = Mathf.CeilToInt(addedFoodTEMP / sizeUpAmount);
+        sizeLevel = Mathf.FloorToInt((float)colonyCount.colonyCount / sizeUpAmount);
 
         float setSize = (sizeLevel * sizeIncreesedBy) + baseSize;
         transform.localScale = new Vector3(setSize, setSize, setSize);
