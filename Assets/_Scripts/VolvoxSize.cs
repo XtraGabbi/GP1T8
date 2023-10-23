@@ -10,14 +10,12 @@ public class VolvoxSize : MonoBehaviour
     [SerializeField] int sizeUpAmount;
     [SerializeField] int sizeLevel;
 
-    private Transform volvoxModel; // doesn't work like I thought it would. changing later
-
     [SerializeField] int addedFoodTEMP; // to be removed later
 
     // Start is called before the first frame update
     void Start()
     {
-        volvoxModel = transform.Find("Sphere");
+
     }
 
     // Update is called once per frame
@@ -31,6 +29,6 @@ public class VolvoxSize : MonoBehaviour
         sizeLevel = Mathf.CeilToInt(addedFoodTEMP / sizeUpAmount);
 
         float setSize = (sizeLevel * sizeIncreesedBy) + baseSize;
-        volvoxModel.localScale = new Vector3(setSize, setSize, setSize);
+        transform.localScale = new Vector3(setSize, setSize, setSize);
     }
 }

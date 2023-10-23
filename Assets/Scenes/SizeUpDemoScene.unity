@@ -1578,8 +1578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad803c80975b0fd479c0ca2751e36763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSize: 100
-  sizeIncreesedBy: 20
+  baseSize: 1
+  sizeIncreesedBy: 0.2
   sizeUpAmount: 6
   sizeLevel: 0
   addedFoodTEMP: 0
