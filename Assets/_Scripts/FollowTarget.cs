@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class FollowTarget : MonoBehaviour
 {
     public static FollowTarget Instance;
     // Start is called before the first frame update
 
-    public float targetlerpSpeed = 0.1f;
+    [FormerlySerializedAs("targetlerpSpeed")] public float speedFactor = 0.1f;
     private PlayerManager _playerManager;
 
     private void Awake()
@@ -41,7 +42,7 @@ public class FollowTarget : MonoBehaviour
             Vector3 nearestPoint = Vector3.Dot(transform.position - leftLightPos, dirBetweenLight) * dirBetweenLight +
                                    leftLightPos;
             
-            transform.position = Vector3.Lerp(transform.position,nearestPoint, targetlerpSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position,nearestPoint, speedFactor * Time.deltaTime);
         }
         else if (_playerManager.lightSourceLeft.isOn || _playerManager.lightSourceRight.isOn)
         {
@@ -51,7 +52,7 @@ public class FollowTarget : MonoBehaviour
             Vector3 lightSorcePos = light.transform.position;
             lightSorcePos.y = 0;
             transform.position = Vector3.Lerp(transform.position,
-                lightSorcePos, targetlerpSpeed * Time.deltaTime);
+                lightSorcePos, speedFactor * Time.deltaTime);
         }
         else
         {
