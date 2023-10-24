@@ -560,6 +560,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4261980669022239129}
   - component: {fileID: 7460689628469166377}
+  - component: {fileID: 5541542718635774729}
   m_Layer: 0
   m_Name: Player(Lights)
   m_TagString: Untagged
@@ -598,10 +599,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actions: {fileID: -944628639613478452, guid: 49ddea46669fbd144a02d9ee1607a5ed, type: 3}
-  lightLeft: {fileID: 4386507686239563117}
-  lightRight: {fileID: 6569700021058995089}
-  movingObject: {fileID: 676435844422787793}
-  _volvox: {fileID: 0}
   lightSourceLeft: {fileID: 0}
   lightSourceRight: {fileID: 0}
   speed: 2
+--- !u!114 &5541542718635774729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119267909247149630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d922376d0efdf849831bee57f2b0f09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTimer: 60
+  onTimerEnd:
+    m_PersistentCalls:
+      m_Calls: []
