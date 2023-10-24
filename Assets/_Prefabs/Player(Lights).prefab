@@ -615,6 +615,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTimer: 60
+  targetColor: {r: 0.3584906, g: 0.23302549, b: 0, a: 0.6313726}
+  initialColor: {r: 0, g: 0, b: 0, a: 0.019607844}
+  targetEmissionColor: {r: 0.3962264, g: 0.24101903, b: 0, a: 1}
+  initialEmissionColor: {r: 0, g: 0, b: 0, a: 0}
+  materialToChange: {fileID: 0}
   onTimerEnd:
     m_PersistentCalls:
       m_Calls: []

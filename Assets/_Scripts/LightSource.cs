@@ -14,8 +14,9 @@ public class LightSource : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        lightBeam.transform.position = GetProjectedPosion(transform.position);
     }
 
     public void Toggle()
@@ -50,5 +51,12 @@ public class LightSource : MonoBehaviour
     {
         if ((targetPos - transform.position).magnitude < 0.001f) return;
         lightBeam.transform.forward = targetPos - transform.position;
+    }
+    public Vector3 GetProjectedPosion(Vector3 ScreenPos)
+    {
+        Vector3 projectDir = (ScreenPos - Camera.main.transform.position).normalized;
+        float d = Vector3.Dot(ScreenPos, Vector3.up) / Vector3.Dot(- projectDir, Vector3.up);
+        Vector3 projectedPos = ScreenPos + projectDir * d;
+        return projectedPos;
     }
 }
