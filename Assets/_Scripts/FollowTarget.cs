@@ -34,13 +34,12 @@ public class FollowTarget : MonoBehaviour
     {
         if (_playerManager.lightSourceLeft.isOn && _playerManager.lightSourceRight.isOn)
         {
-            Vector3 leftLightPos = _playerManager.lightSourceLeft.transform.position;
-            leftLightPos.y = 0;
-            Vector3 rightLightPos = _playerManager.lightSourceRight.transform.position;
-            rightLightPos.y = 0;
-            Vector3 dirBetweenLight = (rightLightPos - leftLightPos).normalized;
-            Vector3 nearestPoint = Vector3.Dot(transform.position - leftLightPos, dirBetweenLight) * dirBetweenLight +
-                                   leftLightPos;
+
+            Vector3 leftLightProjectedPos = GetLightSourceProjectedPosion(_playerManager.lightSourceLeft);
+            Vector3 rightLightProjectedPos = GetLightSourceProjectedPosion(_playerManager.lightSourceRight);
+            Vector3 dirBetweenLight = (rightLightProjectedPos - leftLightProjectedPos).normalized;
+            Vector3 nearestPoint = Vector3.Dot(transform.position - leftLightProjectedPos, dirBetweenLight) * dirBetweenLight +
+                                   leftLightProjectedPos;
             
             transform.position = Vector3.Lerp(transform.position,nearestPoint, speedFactor * Time.deltaTime);
         }
@@ -49,13 +48,20 @@ public class FollowTarget : MonoBehaviour
             LightSource light = _playerManager.lightSourceLeft.isOn
                 ? _playerManager.lightSourceLeft
                 : _playerManager.lightSourceRight;
-            Vector3 lightSorcePos = light.transform.position;
-            lightSorcePos.y = 0;
+            Vector3 lightSorcePos = GetLightSourceProjectedPosion(light);
             transform.position = Vector3.Lerp(transform.position,
                 lightSorcePos, speedFactor * Time.deltaTime);
         }
         else
         {
         }
+    }
+
+    public Vector3 GetLightSourceProjectedPosion(LightSource lightSource)
+    {
+        Vector3 lightSourcePos = lightSource.transform.position;
+        Vector3 lightSourceProjectDir = (lightSourcePos - Camera.main.transform.position).normalized;
+        Vector3 lightSourceProjectedPos = lightSourcePos + lightSourceProjectDir * Vector3.Dot(lightSourcePos, Vector3.up);
+        return lightSourceProjectedPos;
     }
 }
