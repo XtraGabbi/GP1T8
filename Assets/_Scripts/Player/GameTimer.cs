@@ -10,11 +10,11 @@ public class GameTimer : MonoBehaviour
     public float lifeTimer;
     [SerializeField] Color targetColor;
     [SerializeField] Color targetEmissionColor;
+    [SerializeField] Renderer materialToChange;
     
     [Header("Event")]
     [SerializeField] UnityEvent onTimerEnd;
     
-    Renderer _materialToChange;
     float _maxLifeTimer;
     Color _initialColor;
     Color _initialEmissionColor;
@@ -22,8 +22,8 @@ public class GameTimer : MonoBehaviour
 
     private void Awake()
     {
-        _initialEmissionColor = _materialToChange.material.GetColor("_EmissionColor");
-        _initialColor = _materialToChange.material.color;
+        _initialEmissionColor = materialToChange.material.GetColor("_EmissionColor");
+        _initialColor = materialToChange.material.color;
         _maxLifeTimer = lifeTimer;
     }
 
@@ -46,8 +46,8 @@ public class GameTimer : MonoBehaviour
     {
         float lerpValue = 1 - (lifeTimer / _maxLifeTimer);
         Color newEmissionColor = Color.Lerp(_initialEmissionColor, targetEmissionColor, lerpValue);
-        _materialToChange.material.color = Color.Lerp(_initialColor, targetColor, lerpValue);
+        materialToChange.material.color = Color.Lerp(_initialColor, targetColor, lerpValue);
         Debug.Log("Lerp value: " + lerpValue);
-        _materialToChange.material.SetColor("_EmissionColor", newEmissionColor);
+        materialToChange.material.SetColor("_EmissionColor", newEmissionColor);
     }
 }
