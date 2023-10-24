@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,7 +9,9 @@ public class Whirlpool : MonoBehaviour
     public float outerRange = 5f;
     public float innerRange = 3f;
     public float spinStrength = 10f;
+    public float duration = 5;
     public float suckingTime = 1;
+    public ParticleSystem[] ParticleSystems;
     private Volvox _volvox;
     private Rigidbody _volvoxRb;
     private float _distToVolvox;
@@ -19,6 +22,20 @@ public class Whirlpool : MonoBehaviour
     private Vector3 _tangentDir;
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        foreach (var particleSystem in ParticleSystems)
+        {
+            particleSystem.Stop();
+            ParticleSystem.MainModule main = particleSystem.main;
+            main.duration = duration;
+            particleSystem.Play();
+        }
+        
+        
+    }
+
     void Start()
     {
         transform.localScale = Vector3.one * outerRange;
@@ -93,6 +110,5 @@ public class Whirlpool : MonoBehaviour
     {
         _volvox.RemoveColony();
         yield return new WaitForSeconds(suckingTime);
-        
     }
 }
