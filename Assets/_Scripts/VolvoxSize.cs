@@ -35,8 +35,6 @@ public class VolvoxSize : MonoBehaviour
     {
         UpdateSizeLevel();
         UpdateVolvoxSize();
-
-        Score.Instance.UpdateScore();
     }
 
     private void UpdateVolvoxSize()
