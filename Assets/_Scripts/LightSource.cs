@@ -14,7 +14,7 @@ public class LightSource : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         lightBeam.transform.position = GetProjectedPosion(transform.position);
     }
