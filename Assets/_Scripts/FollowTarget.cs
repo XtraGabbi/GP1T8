@@ -61,7 +61,8 @@ public class FollowTarget : MonoBehaviour
     {
         Vector3 lightSourcePos = lightSource.transform.position;
         Vector3 lightSourceProjectDir = (lightSourcePos - Camera.main.transform.position).normalized;
-        Vector3 lightSourceProjectedPos = lightSourcePos + lightSourceProjectDir * Vector3.Dot(lightSourcePos, Vector3.up);
+        float d = Vector3.Dot(lightSourcePos, Vector3.up) / Vector3.Dot(- lightSourceProjectDir, Vector3.up);
+        Vector3 lightSourceProjectedPos = lightSourcePos + lightSourceProjectDir * d;
         return lightSourceProjectedPos;
     }
 }
