@@ -30,11 +30,13 @@ public class VolvoxSize : MonoBehaviour
         UpdateSize();
     }*/
 
-    // Updates volvox size & sizeLevel
+    // Updates volvox size, sizeLevel & score
     public void UpdateSize()
     {
         UpdateSizeLevel();
         UpdateVolvoxSize();
+
+        Score.Instance.UpdateScore();
     }
 
     private void UpdateVolvoxSize()
