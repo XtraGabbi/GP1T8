@@ -13,13 +13,17 @@ public class Volvox : MonoBehaviour
     public GameObject colonyPrefab;
     public Transform colonyCenter;
     public float maxSpeed = 25f;
+    public bool isFollowing = true;
 
     // [Header("Lerp with self position")] public float lerpSpeed = 0.1f;
 
     [Header("For Movement Control")] public Rigidbody rb;
 
-    [FormerlySerializedAs("controlParam_Proportion")] public float speedFactor = 0.01f;
-    [FormerlySerializedAs("controlParam_Differentiation")] public float preventOvershootingFactor = 0.42f;
+    [FormerlySerializedAs("controlParam_Proportion")]
+    public float speedFactor = 0.01f;
+
+    [FormerlySerializedAs("controlParam_Differentiation")]
+    public float preventOvershootingFactor = 0.42f;
 
     private Vector3 error = Vector3.zero;
     private Vector3 errorLastTime = Vector3.zero;
@@ -46,7 +50,6 @@ public class Volvox : MonoBehaviour
         _lightManager = LightManager.Instance;
         _followTarget = FollowTarget.Instance;
         rb.maxLinearVelocity = maxSpeed;
-
     }
 
     // Update is called once per frame
@@ -58,7 +61,10 @@ public class Volvox : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PIDControl(null,null);
+        if (isFollowing)
+        {
+            PIDControl(null, null);
+        }
     }
 
 
@@ -73,10 +79,10 @@ public class Volvox : MonoBehaviour
         Vector3 force = speedFactor * error +
                         preventOvershootingFactor * (error - errorLastTime) / Time.fixedDeltaTime;
         rb.AddForce(force);
-    
+
         errorLastTime = error;
     }
-    
+
     // void LerpPosition()
     // {
     //
@@ -92,10 +98,12 @@ public class Volvox : MonoBehaviour
         float randomZ = Random.Range(0f, 360f);
 
         Vector3 randomPos = Quaternion.Euler(randomX, randomY, randomZ) * Vector3.forward * randomDist;
-        
+
         GameObject newColony = Instantiate(colonyPrefab);
         newColony.transform.SetParent(colonyCenter);
         newColony.transform.position += colonyCenter.position + randomPos;
+
+        VolvoxSize.instance.UpdateSize();
     }
 
     public void RemoveColony()
@@ -106,5 +114,7 @@ public class Volvox : MonoBehaviour
             Destroy(colony);
             print("colony sucked!");
         }
+
+        VolvoxSize.instance.UpdateSize();
     }
 }
