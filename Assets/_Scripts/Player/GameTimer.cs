@@ -49,6 +49,7 @@ public class GameTimer : MonoBehaviour
         float lerpValue = 1 - (lifeTimer / _maxLifeTimer);
         Color newEmissionColor = Color.Lerp(_initialEmissionColor, targetEmissionColor, lerpValue);
         materialToChange.material.color = Color.Lerp(_initialColor, targetColor, lerpValue);
+        // Debug.Log("Lerp value: " + lerpValue);
         materialToChange.material.SetColor("_EmissionColor", newEmissionColor);
     }
 }
