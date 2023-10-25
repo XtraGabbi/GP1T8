@@ -9,10 +9,10 @@ public class PlayerManager : MonoBehaviour
     [Header("Input Actions")]
     [SerializeField] private InputActionAsset actions;
     [Space(20)]
-    [SerializeField] private GameObject lightLeft;
-    [SerializeField] private GameObject lightRight;
-    [SerializeField] private GameObject movingObject;
-    [SerializeField] private Volvox _volvox;
+    // [SerializeField] private GameObject lightLeft;
+    // [SerializeField] private GameObject lightRight;
+    // [SerializeField] private GameObject movingObject;
+    // [SerializeField] private Volvox _volvox;
     
     [Header("Player Settings")]
     [SerializeField] public LightSource lightSourceLeft;
@@ -92,4 +92,22 @@ public class PlayerManager : MonoBehaviour
         lightSourceLeft.Toggle();
         
     } // Checks if the object is active or not, and then sets it to the opposite.
+
+    public Vector3 ScreenToProjectedPoint(float x, float y)
+    {
+        Camera cam = Camera.main;
+        Vector3 screenPos = cam.ScreenToWorldPoint(new Vector3(x, y, cam.farClipPlane));
+        Vector3 projectDir = (screenPos - cam.transform.position).normalized;
+        float d = Vector3.Dot(screenPos, Vector3.up) / Vector3.Dot(- projectDir, Vector3.up);
+        Vector3 projectedPos = screenPos + projectDir * d;
+        return projectedPos;
+    }
+
+    public Vector3 RandomPointWithinProjectedRange()
+    {
+        float x = Random.Range(0f, Screen.width);
+        float y = Random.Range(0f, Screen.height);
+        return ScreenToProjectedPoint(x, y);
+    }
+    
 }
