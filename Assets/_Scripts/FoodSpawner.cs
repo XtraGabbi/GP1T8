@@ -5,13 +5,13 @@ public class FoodSpawner : MonoBehaviour
 {
     [SerializeField] Transform foodPrefab;
     private GameObject foodsParent;
-    public Vector2 spawningRange;
+    public Vector3 spawningRangeOffset;
     public float spawnRateSeconds;
     public int spawnLimit;
 
     // Start is called before the first frame update
     void Start()
-    {
+    {       
         CreateFoodParent();
         StartCoroutine(StartFoodSpawning());
     }
@@ -35,13 +35,13 @@ public class FoodSpawner : MonoBehaviour
 
 
 
-    // The spawning is reletive to the center of the GameObject's position
+    // The spawning is reletive to the screen
     private void SpawnFood()
     {
         if(foodsParent.transform.childCount < spawnLimit)
         {
             Transform food = Instantiate(foodPrefab);
-            food.transform.position += new Vector3(Random.Range(-spawningRange.x, spawningRange.x), 0, Random.Range(-spawningRange.y, spawningRange.y));
+            food.transform.position = PlayerManager.Instance.RandomPointWithinProjectedRange() + spawningRangeOffset;//new Vector3(Random.Range(-spawningRange.x, spawningRange.x), 0, Random.Range(-spawningRange.y, spawningRange.y));
             food.transform.SetParent(foodsParent.transform, true);
         }
     }
