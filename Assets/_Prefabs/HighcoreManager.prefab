@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9c726c66892c140aefea10b0d6cd16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HighscoreData: {fileID: 11400000, guid: bfbff8dd989e6e8479d770684b733250, type: 2}
+  highscoreData: {fileID: 11400000, guid: bfbff8dd989e6e8479d770684b733250, type: 2}
