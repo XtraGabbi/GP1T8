@@ -1,5 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3263091633001198855
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 7
 --- !u!21 &2100000
 Material:
   serializedVersion: 8
@@ -7,8 +20,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<<< HEAD:Assets/Material/DissolveMaterial.mat
+  m_Name: DissolveMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: e24e498d12b726f448691fee55ab0cbc, type: 3}
+========
   m_Name: M_Ripple
   m_Shader: {fileID: -6465566751694194690, guid: 589c3906a8da2b6408b71af233b721e0, type: 3}
+>>>>>>>> 4f137d06709de91c7f3b06253d32d153027f77de:Assets/VFX/VFX/FX_MovementRipple/M_Ripple.mat
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -26,7 +44,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
+<<<<<<<< HEAD:Assets/Material/DissolveMaterial.mat
+        m_Texture: {fileID: 0}
+========
         m_Texture: {fileID: 2800000, guid: b66045b097a4982468531266122bf184, type: 3}
+>>>>>>>> 4f137d06709de91c7f3b06253d32d153027f77de:Assets/VFX/VFX/FX_MovementRipple/M_Ripple.mat
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -50,7 +72,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
+<<<<<<<< HEAD:Assets/Material/DissolveMaterial.mat
+        m_Texture: {fileID: 0}
+========
         m_Texture: {fileID: 2800000, guid: 09f5cc802ee91204d9fab169bed9c019, type: 3}
+>>>>>>>> 4f137d06709de91c7f3b06253d32d153027f77de:Assets/VFX/VFX/FX_MovementRipple/M_Ripple.mat
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -97,14 +123,21 @@ Material:
     - _ColorMode: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _CutoffHeight: 0.21
+    - _Cutoff_Height: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+<<<<<<<< HEAD:Assets/Material/DissolveMaterial.mat
+    - _DissolveFloat: -1
+========
     - _DistortionBlend: 0.5
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0.1
+>>>>>>>> 4f137d06709de91c7f3b06253d32d153027f77de:Assets/VFX/VFX/FX_MovementRipple/M_Ripple.mat
     - _DstBlend: 0
     - _DstBlendAlpha: 0
+    - _EmisionEdgeWidth: 0.1
     - _EnvironmentReflections: 1
     - _FlipbookBlending: 0
     - _FlipbookMode: 0
@@ -112,9 +145,16 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+<<<<<<<< HEAD:Assets/Material/DissolveMaterial.mat
+    - _NoiseOffset: 2
+    - _NoiseScale: 20
+    - _Noise_Streangth: 8
+========
     - _Mode: 0
+>>>>>>>> 4f137d06709de91c7f3b06253d32d153027f77de:Assets/VFX/VFX/FX_MovementRipple/M_Ripple.mat
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _Ripplecount: 0.49
@@ -133,11 +173,21 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+<<<<<<<< HEAD:Assets/Material/DissolveMaterial.mat
+    - _BaseColor: {r: 0.7731968, g: 1, b: 0.6650944, a: 1}
+========
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}
     - _CameraFadeParams: {r: 0, g: 0, b: 0, a: 0}
+>>>>>>>> 4f137d06709de91c7f3b06253d32d153027f77de:Assets/VFX/VFX/FX_MovementRipple/M_Ripple.mat
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DissolveSpeed: {r: 0, g: 1.5, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+<<<<<<<< HEAD:Assets/Material/DissolveMaterial.mat
+    - _EmissionEdgeColor: {r: 0, g: 1, b: 0.28763008, a: 0.9568627}
+    - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+  m_BuildTextureStacks: []
+========
     - _RippleCenter: {r: 0, g: 0, b: 0, a: 0}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
@@ -155,3 +205,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 7
+>>>>>>>> 4f137d06709de91c7f3b06253d32d153027f77de:Assets/VFX/VFX/FX_MovementRipple/M_Ripple.mat
