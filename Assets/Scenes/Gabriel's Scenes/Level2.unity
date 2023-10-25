@@ -200,8 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 2263810760490333637, guid: e961a9914d1e2624f92f5eec0f4183d1, type: 3}
   spawnPoints: []
-  maxFoodInstances: 3
-  minFoodInstances: 3
+  maxFoodInstances: 4
+  minFoodInstances: 4
   foodTag: Food
   spawnRadius: 1
 --- !u!1 &518148926
