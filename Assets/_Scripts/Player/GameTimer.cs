@@ -11,10 +11,11 @@ public class GameTimer : MonoBehaviour
     [SerializeField] Color targetColor;
     [SerializeField] Color targetEmissionColor;
     [SerializeField] Renderer materialToChange;
-    
+
     [Header("Event")]
-    [SerializeField] UnityEvent onTimerEnd;
+    public UnityEvent onTimerEnd;
     
+    Renderer _materialToChange;
     float _maxLifeTimer;
     Color _initialColor;
     Color _initialEmissionColor;
