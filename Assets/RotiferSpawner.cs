@@ -15,8 +15,10 @@ public class RotiferSpawner : MonoBehaviour
 
     [Header("Rotifer")]
     public GameObject rotiferPrefab;
+    public Rotifer rotifer;
+    public Transform spawnPoint;
 
-    public float jumpHeightStart = -5;
+    public float spawnPointDepth = -5;
     public float jumpHeightEnd = 3;
     public float attackInterval = 1;
     public float retreatInterval = 1;
@@ -26,8 +28,9 @@ public class RotiferSpawner : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        spawnPoint.localPosition = new Vector3(0, spawnPointDepth, 0); 
         Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position + new Vector3(0, jumpHeightStart, 0), transform.position + new Vector3(0, jumpHeightEnd, 0));
+        Gizmos.DrawLine(spawnPoint.position, transform.position + new Vector3(0, jumpHeightEnd, 0));
     }
 
     void Start()
@@ -48,6 +51,7 @@ public class RotiferSpawner : MonoBehaviour
 
     IEnumerator Staying()
     {
+        rotifer.rotiferAnimator.SetTrigger("Idle");
         transform.position = PlayerManager.Instance.RandomPointWithinProjectedRange();
         whirlpool.play = true;
         whirlpool.isSucking = true;
@@ -74,12 +78,13 @@ public class RotiferSpawner : MonoBehaviour
     
     IEnumerator Eating()
     {
+        rotifer.rotiferAnimator.SetTrigger("Attack");
         float timePassed = 0;
         while (timePassed < attackInterval)
         {
             timePassed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
-            float currentHeight = Mathf.SmoothStep(jumpHeightStart, jumpHeightEnd, timePassed / attackInterval);
+            float currentHeight = Mathf.SmoothStep(0, jumpHeightEnd - spawnPointDepth, timePassed / attackInterval);
             rotiferPrefab.transform.localPosition = new Vector3(0, currentHeight, 0);
         }
         
@@ -88,7 +93,7 @@ public class RotiferSpawner : MonoBehaviour
         {
             timePassed += Time.deltaTime;
             yield return new WaitForEndOfFrame();
-            float currentHeight = Mathf.SmoothStep(jumpHeightEnd, jumpHeightStart, timePassed / retreatInterval);
+            float currentHeight = Mathf.SmoothStep(jumpHeightEnd - spawnPointDepth, 0, timePassed / retreatInterval);
             rotiferPrefab.transform.localPosition = new Vector3(0, currentHeight, 0);
         }
 
