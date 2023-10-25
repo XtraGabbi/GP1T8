@@ -7,7 +7,7 @@ public class UIEmerge : MonoBehaviour
     private SpriteRenderer renderer;
     private UIKeyFrame frameAnimation;
     [SerializeField] private float animationDelay = 0f;
-    [SerializeField] private float yPos = 0f;
+    [SerializeField] private Vector3 yPos;
     [SerializeField] private float opaqueValue = 1f;
     [SerializeField] private float moveDuration;
     [SerializeField] private float colorDuration;
@@ -25,7 +25,7 @@ public class UIEmerge : MonoBehaviour
     public void MoveUpwards()
     {
         Color opaque = new Color(renderer.color.r, renderer.color.g, renderer.color.b, opaqueValue);
-        transform.DOMoveY(yPos, moveDuration).SetEase(moveEase, easeDuration);
+        transform.DOLocalMove(yPos, moveDuration).SetEase(moveEase, easeDuration);
 
         if (frameAnimation == null)
         {

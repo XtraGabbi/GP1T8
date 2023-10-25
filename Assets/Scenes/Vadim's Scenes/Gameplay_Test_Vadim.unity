@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 264836544}
   - component: {fileID: 264836545}
   - component: {fileID: 264836546}
+  - component: {fileID: 264836547}
   m_Layer: 0
   m_Name: Basis (1)
   m_TagString: Untagged
@@ -431,7 +432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDelay: 0
-  yPos: 0
+  yPos: {x: 0, y: 0, z: 0}
   opaqueValue: 0.6
   moveDuration: 2
   colorDuration: 1
@@ -490,6 +491,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &264836547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 264836543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 3.5
+  yPos: {x: 0, y: 0, z: 0}
+  opaqueValue: 0.2
+  moveDuration: 1
+  colorDuration: 1
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 0.2
 --- !u!1 &412233920
 GameObject:
   m_ObjectHideFlags: 3
@@ -871,6 +892,7 @@ GameObject:
   - component: {fileID: 664848231}
   - component: {fileID: 664848232}
   - component: {fileID: 664848233}
+  - component: {fileID: 664848234}
   m_Layer: 0
   m_Name: D Pad (1)
   m_TagString: Untagged
@@ -906,7 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDelay: 0.0075
-  yPos: 0.2
+  yPos: {x: 0, y: 0, z: 0}
   opaqueValue: 1
   moveDuration: 3
   colorDuration: 2
@@ -965,6 +987,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &664848234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664848230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 12
+  yPos: {x: 0, y: 0, z: 0}
+  opaqueValue: 0.4
+  moveDuration: 1
+  colorDuration: 1
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 1
 --- !u!1 &682768365
 GameObject:
   m_ObjectHideFlags: 0
@@ -976,6 +1018,7 @@ GameObject:
   - component: {fileID: 682768366}
   - component: {fileID: 682768367}
   - component: {fileID: 682768368}
+  - component: {fileID: 682768369}
   m_Layer: 0
   m_Name: Down Button (1)
   m_TagString: Untagged
@@ -1011,7 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDelay: 0.015
-  yPos: 0.3
+  yPos: {x: 0, y: 0, z: 0}
   opaqueValue: 0.8
   moveDuration: 3.25
   colorDuration: 2
@@ -1070,6 +1113,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &682768369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682768365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 3.5
+  yPos: {x: 0, y: 0, z: 0}
+  opaqueValue: 0.4
+  moveDuration: 1
+  colorDuration: 1
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 0.2
 --- !u!1 &785694055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1144,7 @@ GameObject:
   - component: {fileID: 785694056}
   - component: {fileID: 785694057}
   - component: {fileID: 785694058}
+  - component: {fileID: 785694059}
   m_Layer: 0
   m_Name: D Pad
   m_TagString: Untagged
@@ -1116,7 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDelay: 0.0075
-  yPos: 0.2
+  yPos: {x: 10.3, y: -9.6, z: -4.21}
   opaqueValue: 1
   moveDuration: 3
   colorDuration: 2
@@ -1175,6 +1239,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &785694059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785694055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 12
+  yPos: {x: 0, y: -12, z: 0}
+  opaqueValue: 0.4
+  moveDuration: 1
+  colorDuration: 1
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 1
 --- !u!1 &827488968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1186,6 +1270,8 @@ GameObject:
   - component: {fileID: 827488969}
   - component: {fileID: 827488970}
   - component: {fileID: 827488971}
+  - component: {fileID: 827488972}
+  - component: {fileID: 827488973}
   m_Layer: 0
   m_Name: Up Button (1)
   m_TagString: Untagged
@@ -1221,7 +1307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDelay: 0.01
-  yPos: 0.3
+  yPos: {x: 0, y: 0, z: 0}
   opaqueValue: 0.8
   moveDuration: 3.5
   colorDuration: 2
@@ -1280,6 +1366,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &827488972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827488968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 3.5
+  yPos: {x: 0, y: 0, z: 0}
+  opaqueValue: 0.4
+  moveDuration: 1
+  colorDuration: 1
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 0.2
+--- !u!114 &827488973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827488968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 12.3
+  yPos: {x: 0, y: 0, z: 0}
+  opaqueValue: 1
+  moveDuration: 1
+  colorDuration: 1
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 1
 --- !u!1 &838500871
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1545,7 @@ GameObject:
   - component: {fileID: 903975108}
   - component: {fileID: 903975109}
   - component: {fileID: 903975110}
+  - component: {fileID: 903975111}
   m_Layer: 0
   m_Name: Down Button
   m_TagString: Untagged
@@ -1454,7 +1581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDelay: 0.015
-  yPos: 0.3
+  yPos: {x: 9.55, y: -9.8, z: -2.08}
   opaqueValue: 0.8
   moveDuration: 3.25
   colorDuration: 2
@@ -1513,6 +1640,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &903975111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903975107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 3.5
+  yPos: {x: 9.55, y: -12, z: -2.08}
+  opaqueValue: 0.4
+  moveDuration: 1
+  colorDuration: 1
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 0.2
 --- !u!1 &914179828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1528,7 +1675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &914179829
 Transform:
   m_ObjectHideFlags: 0
@@ -2167,6 +2314,7 @@ GameObject:
   - component: {fileID: 1697821651}
   - component: {fileID: 1697821652}
   - component: {fileID: 1697821653}
+  - component: {fileID: 1697821654}
   m_Layer: 0
   m_Name: Basis
   m_TagString: Untagged
@@ -2202,7 +2350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDelay: 0
-  yPos: 0
+  yPos: {x: 9.58, y: -10, z: -0.67}
   opaqueValue: 0.6
   moveDuration: 2
   colorDuration: 1
@@ -2261,6 +2409,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1697821654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697821650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 3.5
+  yPos: {x: 9.58, y: -12, z: -0.67}
+  opaqueValue: 0.2
+  moveDuration: 1
+  colorDuration: 1
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 0.2
 --- !u!1 &1786271530
 GameObject:
   m_ObjectHideFlags: 0
@@ -2273,13 +2441,14 @@ GameObject:
   - component: {fileID: 1786271533}
   - component: {fileID: 1786271532}
   - component: {fileID: 1786271534}
+  - component: {fileID: 1786271535}
   m_Layer: 0
   m_Name: Right Hand Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1786271531
 Transform:
   m_ObjectHideFlags: 0
@@ -2307,9 +2476,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52bba49a4d4fd3344a7054cf88cb6baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actions: {fileID: 0}
+  actionToConnect: 
   newSprite: {fileID: 21300000, guid: fe8cd92bb409d5543b53aebb433fd0d2, type: 3}
+  numberOfCycles: 3
   enterDelay: 1
-  backDelay: 2
+  backDelay: 1.5
 --- !u!114 &1786271533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2322,8 +2494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationDelay: 0
-  yPos: 2
+  animationDelay: 2.75
+  yPos: {x: 0, y: 0, z: 0}
   opaqueValue: 1
   moveDuration: 2
   colorDuration: 1.8
@@ -2382,6 +2554,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1786271535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786271530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 11.5
+  yPos: {x: 0, y: 0, z: 0}
+  opaqueValue: 0
+  moveDuration: 0.8
+  colorDuration: 0.8
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 1
 --- !u!1 &1886134850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,13 +2586,14 @@ GameObject:
   - component: {fileID: 1886134854}
   - component: {fileID: 1886134853}
   - component: {fileID: 1886134852}
+  - component: {fileID: 1886134855}
   m_Layer: 0
   m_Name: Left Hand Idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1886134851
 Transform:
   m_ObjectHideFlags: 0
@@ -2480,7 +2673,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52bba49a4d4fd3344a7054cf88cb6baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actions: {fileID: -944628639613478452, guid: 49ddea46669fbd144a02d9ee1607a5ed, type: 3}
+  actionToConnect: Right
   newSprite: {fileID: 21300000, guid: fe8cd92bb409d5543b53aebb433fd0d2, type: 3}
+  numberOfCycles: 3
   enterDelay: 1
   backDelay: 2
 --- !u!114 &1886134854
@@ -2495,14 +2691,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationDelay: 0
-  yPos: 2
+  animationDelay: 2.5
+  yPos: {x: 12.6, y: 0, z: -4.37}
   opaqueValue: 1
   moveDuration: 2
   colorDuration: 1.8
   moveEase: 0
   colorEase: 0
   easeDuration: 0
+--- !u!114 &1886134855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1886134850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 11.5
+  yPos: {x: 12.6, y: 20, z: -4.37}
+  opaqueValue: 0
+  moveDuration: 0.8
+  colorDuration: 0.8
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 1
 --- !u!1 &1925324589
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,6 +2730,8 @@ GameObject:
   - component: {fileID: 1925324590}
   - component: {fileID: 1925324591}
   - component: {fileID: 1925324592}
+  - component: {fileID: 1925324593}
+  - component: {fileID: 1925324594}
   m_Layer: 0
   m_Name: Up Button
   m_TagString: Untagged
@@ -2549,7 +2767,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationDelay: 0.01
-  yPos: 0.3
+  yPos: {x: 9.55, y: -9.8, z: 0.93}
   opaqueValue: 0.8
   moveDuration: 3.5
   colorDuration: 2
@@ -2608,6 +2826,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1925324593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925324589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 3.5
+  yPos: {x: 9.55, y: -12, z: 0.93}
+  opaqueValue: 0.4
+  moveDuration: 1
+  colorDuration: 1
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 0.2
+--- !u!114 &1925324594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925324589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19b605c997cb49e4ca7086bd24e56f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDelay: 12.3
+  yPos: {x: 9.55, y: -9.6, z: 0.93}
+  opaqueValue: 1
+  moveDuration: 1
+  colorDuration: 1
+  moveEase: 0
+  colorEase: 0
+  easeDuration: 1
 --- !u!1001 &1995162523
 PrefabInstance:
   m_ObjectHideFlags: 0
