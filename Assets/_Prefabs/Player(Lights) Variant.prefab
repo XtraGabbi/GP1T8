@@ -55,5 +55,67 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4092488865089371761, guid: bd1942ef0edede64c87a2a1eebc3a02a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5724638849734468191}
+    - targetCorrespondingSourceObject: {fileID: 4952974604183058568, guid: bd1942ef0edede64c87a2a1eebc3a02a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9086456328629204117}
   m_SourcePrefab: {fileID: 100100000, guid: bd1942ef0edede64c87a2a1eebc3a02a, type: 3}
+--- !u!1 &3116073580065471714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4952974604183058568, guid: bd1942ef0edede64c87a2a1eebc3a02a, type: 3}
+  m_PrefabInstance: {fileID: 8034989359282553962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9086456328629204117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3116073580065471714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+--- !u!1 &6289686657569405467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4092488865089371761, guid: bd1942ef0edede64c87a2a1eebc3a02a, type: 3}
+  m_PrefabInstance: {fileID: 8034989359282553962}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5724638849734468191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289686657569405467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
