@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Whirlpool : MonoBehaviour
 {
     public bool DrawGizmos;
     public bool play = true;
     private bool isPlaying = true;
-    public bool isSucked = false;
+    public bool isSucking = true;
     public float outerRange = 5f;
     public float deadZoneRange = 3f;
     public float innerRange = 1f;
@@ -92,7 +93,7 @@ public class Whirlpool : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_dist < outerRange && !isSucked)
+        if (_dist < outerRange && isSucking)
         {
             // _desiredDist = _dist;
             _centripetalDir = _centripetalVector.normalized;
@@ -137,14 +138,14 @@ public class Whirlpool : MonoBehaviour
             // within inner range, start 
             else
             {
-                StartCoroutine(Sucking());
-                isSucked = true;
+                // StartCoroutine(Sucking());
+                // isSucking = true;
             }
         }
         else
         {
             _desiredDist = outerRange;
-            isSucked = false;
+            // isSucking = false;
             // _volvox.isFollowing = true;
         }
     }
