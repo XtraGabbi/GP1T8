@@ -108,22 +108,22 @@ public class Whirlpool : MonoBehaviour
                 _tangentDir = Vector3.Cross(Vector3.down, _centripetalDir);
             }
 
-            float speed = _volvoxRb.velocity.magnitude;
-            speed += spinStrength / Time.fixedDeltaTime;
-            _volvoxRb.velocity = _volvoxRb.velocity.normalized * speed;
-            _volvoxRb.velocity = Quaternion.FromToRotation(_volvoxRb.velocity.normalized, _tangentDir) * _volvoxRb.velocity;
+            // float speed = _volvoxRb.velocity.magnitude;
+            // speed += spinStrength / Time.fixedDeltaTime;
+            // _volvoxRb.velocity = _volvoxRb.velocity.normalized * speed;
+            // _volvoxRb.velocity = Quaternion.FromToRotation(_volvoxRb.velocity.normalized, _tangentDir) * _volvoxRb.velocity;
             
-            //
-            // Vector3 tangentAccel = _tangentDir * spinStrength;
-            // _volvoxRb.AddForce(tangentAccel, ForceMode.Acceleration);
-
             Vector3 centripetalAccel = _centripetalDir * Mathf.Pow(_volvoxRb.velocity.magnitude, 2) / _desiredDist;
             _volvoxRb.AddForce(centripetalAccel, ForceMode.Acceleration);
+            
+            Vector3 tangentAccel = _tangentDir * spinStrength;
+            _volvoxRb.AddForce(tangentAccel, ForceMode.Acceleration);
+
 
             // drag into the center (inner range)
             if (_desiredDist > innerRange)
             {
-                // _desiredDist *= 0.99f;
+                _desiredDist *= 0.99f;
             }
             
             // 
