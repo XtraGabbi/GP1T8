@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.96, y: 0, z: 2.72}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7528130460332703275}
@@ -46,11 +46,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DrawGizmos: 1
+  play: 1
   isSucked: 0
-  outerRange: 3
-  innerRange: 0.5
-  spinStrength: 50
-  suckingTime: 0
+  outerRange: 5
+  deadZoneRange: 3
+  innerRange: 1
+  spinStrength: 0.2
+  duration: 1000
+  suckingTime: 0.1
+  ParticleSystems:
+  - {fileID: 6431684018961125678}
+  - {fileID: 7988606263058639911}
+  - {fileID: 485062959406825096}
+  _desiredDist: 0
+  _dist: 0
 --- !u!1001 &5013724925700798490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62,6 +71,14 @@ PrefabInstance:
     - target: {fileID: 1576367065362365542, guid: 76a554ea7c7a80f478f841b8b2ac7fa2, type: 3}
       propertyPath: m_Name
       value: FX_Whirlpool
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077772172940994868, guid: 76a554ea7c7a80f478f841b8b2ac7fa2, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119146622122513469, guid: 76a554ea7c7a80f478f841b8b2ac7fa2, type: 3}
+      propertyPath: looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3119146622122513469, guid: 76a554ea7c7a80f478f841b8b2ac7fa2, type: 3}
       propertyPath: scalingMode
@@ -131,6 +148,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.39134
       objectReference: {fileID: 0}
+    - target: {fileID: 4841121592992745106, guid: 76a554ea7c7a80f478f841b8b2ac7fa2, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6480220203870834058, guid: 76a554ea7c7a80f478f841b8b2ac7fa2, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.6565
@@ -148,8 +169,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a554ea7c7a80f478f841b8b2ac7fa2, type: 3}
+--- !u!198 &485062959406825096 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4841121592992745106, guid: 76a554ea7c7a80f478f841b8b2ac7fa2, type: 3}
+  m_PrefabInstance: {fileID: 5013724925700798490}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6431684018961125678 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2077772172940994868, guid: 76a554ea7c7a80f478f841b8b2ac7fa2, type: 3}
+  m_PrefabInstance: {fileID: 5013724925700798490}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7528130460332703275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3309334858220127793, guid: 76a554ea7c7a80f478f841b8b2ac7fa2, type: 3}
+  m_PrefabInstance: {fileID: 5013724925700798490}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &7988606263058639911 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3119146622122513469, guid: 76a554ea7c7a80f478f841b8b2ac7fa2, type: 3}
   m_PrefabInstance: {fileID: 5013724925700798490}
   m_PrefabAsset: {fileID: 0}
