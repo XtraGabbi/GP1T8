@@ -541,65 +541,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 92725282643953534, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1228393738043073108, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
       propertyPath: m_Name
       value: Player(Lights) Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 1605545649765633072, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2319431997178353439, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2550594290139305827, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: materialToChange
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3719730109254903446, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3796049724760229883, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4803839868572499653, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: preventOvershootingFactor
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4803839868572499653, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: controlParam_Differentiation
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4818654606753327608, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4818654606753327608, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f562086ab60a0594bba9748fdd02a667, type: 2}
-    - target: {fileID: 4902268934416814894, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4908011181705029344, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4908011181705029344, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: targetlerpSpeed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6008370624173500679, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6100016389139103219, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
       propertyPath: m_LocalPosition.x
@@ -641,33 +585,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6320626631539046728, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_Height
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320626631539046728, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_Radius
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320626631539046728, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6320626631539046728, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6551848677296302308, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: isOn
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7687875364881830249, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
-      propertyPath: isOn
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 4902268934416814894, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f84e6bfe06ca9548b5da8e68fcdbd99, type: 3}
