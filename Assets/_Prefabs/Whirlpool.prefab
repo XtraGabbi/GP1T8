@@ -51,7 +51,7 @@ MonoBehaviour:
   outerRange: 5
   deadZoneRange: 3
   innerRange: 1
-  spinStrength: 0.2
+  spinStrength: 50
   duration: 1000
   suckingTime: 0.1
   ParticleSystems:
