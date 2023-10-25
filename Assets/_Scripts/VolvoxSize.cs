@@ -24,11 +24,6 @@ public class VolvoxSize : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    /*void Update()
-    {
-        UpdateSize();
-    }*/
 
     // Updates volvox size, sizeLevel & UIscore
     public void UpdateSize()

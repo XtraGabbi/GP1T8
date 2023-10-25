@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FoodSpawner : MonoBehaviour
 {
@@ -9,11 +10,22 @@ public class FoodSpawner : MonoBehaviour
     public float spawnRateSeconds;
     public int spawnLimit;
 
+    private UnityEvent onTimerEnd;
+
+    private IEnumerator FoodSpawning;
+
     // Start is called before the first frame update
     void Start()
-    {       
+    {
+        FoodSpawning = StartFoodSpawning();
+
         CreateFoodParent();
-        StartCoroutine(StartFoodSpawning());
+        StartCoroutine(FoodSpawning);
+
+        //Adds StopFoodSpawning as a listener to onTimerEnd
+        onTimerEnd = GameObject.FindFirstObjectByType<GameTimer>().onTimerEnd;
+        onTimerEnd.AddListener(StopFoodSpawning);
+        onTimerEnd.AddListener(DestroyAllFood);
     }
 
 
@@ -30,7 +42,7 @@ public class FoodSpawner : MonoBehaviour
     // Stop food spawning
     public void StopFoodSpawning()
     {
-        StopCoroutine(StartFoodSpawning());        
+        StopCoroutine(FoodSpawning);        
     }
 
 
@@ -52,5 +64,13 @@ public class FoodSpawner : MonoBehaviour
     {
         foodsParent = new GameObject();
         foodsParent.name = "Foods";
+    }
+
+    private void DestroyAllFood()
+    {
+        foreach(Transform food in foodsParent.transform)
+        {  
+            Destroy(food.gameObject); 
+        }
     }
 }
